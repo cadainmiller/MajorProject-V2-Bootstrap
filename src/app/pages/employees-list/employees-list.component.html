@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <a
+          class="align-items-center btn btn-primary text-white"
+          (click)="openCreateEmployee()"
+        >
+          <ion-icon class="mr-2" name="person-add"></ion-icon>Create Employee
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row pt-4">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Employees List</h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Address</th>
+              <th scope="col">Company</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employees">
+              <th scope="row">{{ employee.id }}</th>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.email }}</td>
+              <td>{{ employee.phone }}</td>
+              <td>
+                {{ employee.address.city }}, {{ employee.address.street }}
+              </td>
+              <td>{{ employee.company.name }}</td>
+              <td><ion-icon class="ion-icon" name="create"></ion-icon></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
