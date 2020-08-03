@@ -31,16 +31,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let employee of employees">
-              <th scope="row">{{ employee.id }}</th>
-              <td>{{ employee.name }}</td>
-              <td>{{ employee.email }}</td>
-              <td>{{ employee.phone }}</td>
+            <tr *ngFor="let emp of employees; let index = index;;">
+              <th scope="row">{{ emp.id }}</th>
+              <td>{{ emp.name }}</td>
+              <td>{{ emp.email }}</td>
+              <td>{{ emp.phone }}</td>
               <td>
-                {{ employee.address.city }}, {{ employee.address.street }}
+                {{ emp.address.city }}, {{ emp.address.street }}
               </td>
-              <td>{{ employee.company.name }}</td>
-              <td><ion-icon class="ion-icon" name="create"></ion-icon></td>
+              <td>{{ emp.company.name }}</td>
+              <td><ion-icon class="ion-icon btn" name="create" (click)="openEditEmployee(index)"></ion-icon></td>
             </tr>
           </tbody>
         </table>
