@@ -36,11 +36,15 @@
               <td>{{ emp.name }}</td>
               <td>{{ emp.email }}</td>
               <td>{{ emp.phone }}</td>
-              <td>
-                {{ emp.address.city }}, {{ emp.address.street }}
-              </td>
+              <td>{{ emp.address.city }}, {{ emp.address.street }}</td>
               <td>{{ emp.company.name }}</td>
-              <td><ion-icon class="ion-icon btn" name="create" (click)="openEditEmployee(index)"></ion-icon></td>
+              <td>
+                <ion-icon
+                  class="ion-icon btn"
+                  name="create"
+                  (click)="openEditEmployee(index)"
+                ></ion-icon>
+              </td>
             </tr>
           </tbody>
         </table>

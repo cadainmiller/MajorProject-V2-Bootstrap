@@ -41,7 +41,7 @@ export class EmployeesListComponent implements OnInit {
       .pipe()
       .subscribe((results) => {
         this.employees = results;
-        //console.log(results);
+        console.log(results);
       });
   }
 }
