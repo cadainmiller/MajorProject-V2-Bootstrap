@@ -1,15 +1,18 @@
-import { Component, OnInit, PipeTransform } from '@angular/core';
-import { ColDef, GridApi, ColumnApi } from 'ag-grid-community';
-import { EmployeesService } from 'src/app/services/employees.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 var $: any;
 
 @Component({
-  selector: 'app-employees-search',
-  templateUrl: './employees-search.component.html',
-  styleUrls: ['./employees-search.component.scss'],
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss'],
 })
-export class EmployeesSearchComponent implements OnInit {
+
+
+export class TestComponent implements OnInit {
+  constructor(private http: HttpClient) {}
+
   columnDefs = [
     { headerName: 'Make', field: 'make', sortable: true, filter: true },
     { headerName: 'Model', field: 'model', sortable: true, filter: true },
@@ -20,12 +23,9 @@ export class EmployeesSearchComponent implements OnInit {
     { make: 'Ford', model: 'Mondeo', price: 32000 },
     { make: 'Porsche', model: 'Boxter', price: 72000 },
   ];
-
-  constructor(private employeeService: EmployeesService) {}
-
-  ngOnInit(): void {}
-
   onRowClicked(event: any) {
     $('#imagemodal').modal('show');
   }
+
+  ngOnInit() {}
 }

@@ -1,1 +1,42 @@
-<p>employees-search works!</p>
+<div class="card">
+  <div class="container mt-5 mb-5">
+    <ag-grid-angular
+      style="width: 620px; height: 300px;"
+      class="ag-theme-balham-dark"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs"
+      (rowClicked)="onRowClicked($event)"
+    >
+    </ag-grid-angular>
+  </div>
+
+  <div
+    class="modal"
+    id="imagemodal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Ag-Grid Row Click</h4>
+        </div>
+        <div class="modal-body">
+          <p>Ag-Grid Row Clicked!!</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-dark"
+            data-dismiss="modal"
+            
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

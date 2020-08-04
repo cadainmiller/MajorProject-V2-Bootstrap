@@ -26,7 +26,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/scss/bootstrap.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

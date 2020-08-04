@@ -6,15 +6,20 @@ import { DefaultModule } from 'src/app/layout/default/default.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { AgGridModule } from 'ag-grid-angular';
+import { TestComponent } from './pages/test/test.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TestComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DefaultModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],
