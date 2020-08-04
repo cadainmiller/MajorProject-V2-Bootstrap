@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { AgGridModule } from 'ag-grid-angular';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DefaultComponent } from './default.component';
 import { MainComponent } from '../../pages/main/main.component';
@@ -15,7 +15,8 @@ import { EmployeesSearchComponent } from 'src/app/pages/employees-search/employe
     EmployeesListComponent,
     EmployeesSearchComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule,],
+  imports: [CommonModule, RouterModule, SharedModule, AgGridModule],
+  exports: [ DefaultComponent, MainComponent, EmployeesListComponent, EmployeesSearchComponent ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DefaultModule {}
