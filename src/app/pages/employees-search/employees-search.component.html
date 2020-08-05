@@ -1,11 +1,14 @@
 <div class="card">
   
-<div class="container-fluid mt-5 mb-5">
+<div class="container-fluid mt-5 mb-0">
   <ag-grid-angular
-      style="width: 100%; height: 920px;" 
+      style="width: 100%; height: 800px;" 
       class="ag-theme-balham"
       [rowData]="rowData"
       [columnDefs]="columnDefs"
+      [pagination]="true"
+      [paginationAutoPageSize]="true"
+      
     (rowClicked)='onRowClicked($event)'
       >
   </ag-grid-angular>

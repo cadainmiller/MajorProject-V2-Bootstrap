@@ -5,6 +5,9 @@
         class="ag-theme-balham"
         [rowData]="rowData"
         [columnDefs]="columnDefs"
+        [pagination]="true"
+        [paginationAutoPageSize]="true"
+
       (rowClicked)='onRowClicked($event)'
         >
     </ag-grid-angular>
