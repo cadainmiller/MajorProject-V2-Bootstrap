@@ -5,7 +5,7 @@ import { MainComponent } from './pages/main/main.component';
 import { EmployeesListComponent } from './pages/employees-list/employees-list.component';
 import { EmployeesSearchComponent } from './pages/employees-search/employees-search.component';
 import { TestComponent } from './pages/test/test.component';
-
+import { UserComponentComponent } from './pages/user-component/user-component.component';
 
 const routes: Routes = [
   {
@@ -24,12 +24,16 @@ const routes: Routes = [
         path: 'esearch',
         component: EmployeesSearchComponent,
       },
+      {
+        path: 'user',
+        component: UserComponentComponent,
+      },
     ],
   },
   {
     path: 'test',
-    component: TestComponent
-  }
+    component: TestComponent,
+  },
 ];
 
 @NgModule({

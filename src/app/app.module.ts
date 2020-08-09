@@ -9,7 +9,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
 import { TestComponent } from './pages/test/test.component';
-
 @NgModule({
   declarations: [AppComponent, TestComponent],
   imports: [
@@ -19,7 +18,7 @@ import { TestComponent } from './pages/test/test.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],

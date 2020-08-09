@@ -7,6 +7,7 @@ import { DefaultComponent } from './default.component';
 import { MainComponent } from '../../pages/main/main.component';
 import { EmployeesListComponent } from 'src/app/pages/employees-list/employees-list.component';
 import { EmployeesSearchComponent } from 'src/app/pages/employees-search/employees-search.component';
+import { UserComponentComponent } from 'src/app/pages/user-component/user-component.component';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,16 @@ import { EmployeesSearchComponent } from 'src/app/pages/employees-search/employe
     MainComponent,
     EmployeesListComponent,
     EmployeesSearchComponent,
+    UserComponentComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule, AgGridModule],
-  exports: [ DefaultComponent, MainComponent, EmployeesListComponent, EmployeesSearchComponent ],
+  exports: [
+    DefaultComponent,
+    MainComponent,
+    EmployeesListComponent,
+    EmployeesSearchComponent,
+    UserComponentComponent,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DefaultModule {}
