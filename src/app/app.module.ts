@@ -6,7 +6,7 @@ import { DefaultModule } from 'src/app/layout/default/default.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
 import { TestComponent } from './pages/test/test.component';
 @NgModule({
@@ -17,7 +17,7 @@ import { TestComponent } from './pages/test/test.component';
     DefaultModule,
     NgbModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     AgGridModule.withComponents([]),
   ],
   providers: [HttpClientModule],
