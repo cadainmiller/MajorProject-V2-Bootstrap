@@ -91,25 +91,12 @@
             <div class="form-group col-md-12">
               <label for="inputUsername">Username</label>
               <input
-                [class.is-invalid]="
-                  (addUserForm.get('username').touched || submitted) &&
-                  addUserForm.get('username').errors?.required
-                "
                 type="text"
-                formControlName="username"
                 class="form-control"
-                id="inputUsername"
-                placeholder="Username"
+                name="username"
+                id="username"
+                formControlName="username"
               />
-              <span
-                *ngIf="
-                  (addUserForm.get('username').touched || submitted) &&
-                  addUserForm.get('username').errors?.required
-                "
-                id="makeErr"
-                class="error"
-                >Please create a username</span
-              >
             </div>
           </div>
 
@@ -185,7 +172,7 @@
               <label for="role">Role</label>
               <select class="form-control" id="role" formControlName="role">
                 <option value="" disabled>Choose user role</option>
-                <option value="basic">User </option>
+                <option value="basic">Basic </option>
                 <option value="supervisor">Supervisor</option>
                 <option value="admin">Admin</option>
               </select>
@@ -200,6 +187,7 @@
               </label>
             </div>
           </div>
+
           <button (click)="clickAddUser()" class="btn btn-primary">
             Create User
           </button>

@@ -9,6 +9,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-component.component.scss'],
 })
 export class UserComponentComponent implements OnInit {
+  isDisabled = true;
+
   addUserForm = new FormGroup({
     firstname: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
@@ -19,6 +21,11 @@ export class UserComponentComponent implements OnInit {
     role: new FormControl(),
   });
   submitted = false;
+  hideModal = '';
+  valuefirstname = '';
+  valuelastname = '';
+
+  OnInit() {}
 
   get firstname() {
     return this.addUserForm.get('firstname');
@@ -28,20 +35,22 @@ export class UserComponentComponent implements OnInit {
     return this.addUserForm.get('lastname');
   }
 
-  get username() {
-    return this.addUserForm.get('username');
-  }
-
   get email() {
     return this.addUserForm.get('email');
+  }
+
+  get username() {
+    return this.addUserForm.get('username');
   }
 
   constructor(private userService: UserService) {}
 
   clickAddUser() {
     console.log(this.addUserForm.value);
+
     this.userService.addNewUser(this.addUserForm.value).subscribe((data) => {
       console.log(data);
+      this.hideModal = 'modal';
     });
   }
   ngOnInit(): void {}
