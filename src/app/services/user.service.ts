@@ -21,4 +21,9 @@ export class UserService {
       headers: headers,
     });
   }
+
+  public getUser(): Observable<any> {
+    console.log();
+    return this.httpClient.get(this.REST_API_SERVER + 'api/users');
+  }
 }

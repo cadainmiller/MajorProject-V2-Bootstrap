@@ -6,6 +6,9 @@ import { EmployeesListComponent } from './pages/employees-list/employees-list.co
 import { EmployeesSearchComponent } from './pages/employees-search/employees-search.component';
 import { TestComponent } from './pages/test/test.component';
 import { UserComponentComponent } from './pages/user-component/user-component.component';
+import { LoginComponent } from './pages/login/login.component';
+
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -29,10 +32,16 @@ const routes: Routes = [
         component: UserComponentComponent,
       },
     ],
+    canActivate: [AuthGuard],
   },
   {
     path: 'test',
     component: TestComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 

@@ -24,6 +24,7 @@ export class UserComponentComponent implements OnInit {
   hideModal = '';
   valuefirstname = '';
   valuelastname = '';
+  users = [];
 
   OnInit() {}
 
@@ -53,5 +54,13 @@ export class UserComponentComponent implements OnInit {
       this.hideModal = 'modal';
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService
+      .getUser()
+      .pipe()
+      .subscribe((results) => {
+        this.users = results;
+        console.log(results);
+      });
+  }
 }
