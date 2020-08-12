@@ -23,6 +23,7 @@ export class UserService {
   }
 
   public getUser(): Observable<any> {
+    const headers = { 'content-type': 'application/json' };
     console.log();
     return this.httpClient.get(this.REST_API_SERVER + 'api/users');
   }
