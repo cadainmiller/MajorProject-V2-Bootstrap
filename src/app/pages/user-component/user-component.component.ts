@@ -60,7 +60,7 @@ export class UserComponentComponent implements OnInit {
       .pipe()
       .subscribe((results) => {
         this.users = results;
-        console.log(results);
+        console.log(this.users);
       });
   }
 }
