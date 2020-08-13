@@ -212,18 +212,20 @@
               <th scope="col">Email</th>
               <th scope="col">Phone Number</th>
               <th scope="col">Role</th>
+              <th scope="col">Created</th>
               <th scope="col">Edit</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of users; let index = index;;">
+            <tr *ngFor="let user of users[0]; let index = index;;">
               <th scope="row">{{ user._id }}</th>
-              <td>{{ user[index].firstname }}</td>
-              <td>{{ user[index].lastname }}</td>
-              <td>{{ user[index].username }}</td>
-              <td>{{ user[index].email }}</td>
-              <td>{{ user[index].phonenumber }}</td>
-              <td>{{ user[index].role }}</td>
+              <td>{{ user.firstname | titlecase }}</td>
+              <td>{{ user.lastname | titlecase }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phonenumber }}</td>
+              <td>{{ user.role | titlecase }}</td>
+              <td>{{ user.createdAt | date: "MM/dd/yy" }}</td>
               <td>
                 <ion-icon
                   class="ion-icon btn"
