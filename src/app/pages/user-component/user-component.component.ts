@@ -24,7 +24,7 @@ export class UserComponentComponent implements OnInit {
   hideModal = '';
   valuefirstname = '';
   valuelastname = '';
-  users = [];
+  users: any = [];
 
   OnInit() {}
 
@@ -59,7 +59,7 @@ export class UserComponentComponent implements OnInit {
       .getUser()
       .pipe()
       .subscribe((results) => {
-        this.users = results;
+        this.users = Object.values(results);
         console.log(this.users);
       });
   }

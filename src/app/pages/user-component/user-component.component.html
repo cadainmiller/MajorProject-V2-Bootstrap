@@ -208,17 +208,22 @@
               <th scope="col">#</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
+              <th scope="col">Username</th>
               <th scope="col">Email</th>
               <th scope="col">Phone Number</th>
-              <th scope="col">Address</th>
-              <th scope="col">Status</th>
+              <th scope="col">Role</th>
               <th scope="col">Edit</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let user of users; let index = index;;">
-              <th scope="row">{{ this.id }}</th>
-              <td>{{ user.firstname }}</td>
+              <th scope="row">{{ user._id }}</th>
+              <td>{{ user[index].firstname }}</td>
+              <td>{{ user[index].lastname }}</td>
+              <td>{{ user[index].username }}</td>
+              <td>{{ user[index].email }}</td>
+              <td>{{ user[index].phonenumber }}</td>
+              <td>{{ user[index].role }}</td>
               <td>
                 <ion-icon
                   class="ion-icon btn"
