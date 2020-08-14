@@ -22,7 +22,10 @@ export class EmployeesListComponent implements OnInit {
   public employee = [];
 
   openCreateEmployee() {
-    const modalRef = this.modalService.open(CreateUserComponent);
+    const modalRef = this.modalService.open(CreateUserComponent, {
+      size: 'lg',
+      centered: true,
+    });
     //modalRef.componentInstance.src = link;
   }
 
@@ -30,7 +33,10 @@ export class EmployeesListComponent implements OnInit {
     console.log(index);
     if (index > -1) {
       this.employee = this.employees[index];
-      const modalRef = this.modalService.open(EditCustomerComponent);
+      const modalRef = this.modalService.open(EditCustomerComponent, {
+        size: 'lg',
+        centered: true,
+      });
       modalRef.componentInstance.employee = this.employee;
     }
   }
